@@ -85,7 +85,7 @@ Currently, we have only released the results from our paper, and we plan to rele
 
 | Model Name                                                                          | Dataset       | Training Iterations 
 -------------------------------------------------------------------------------------|---------------|---------------------
-| [languagecodec_paper_8nq](https://huggingface.co/charactr/vocos-mel-24khz)         | 3W Hours      | 2.0 M           
+| [languagecodec_paper_8nq](https://drive.google.com/file/d/109ectu4NJWFCpmrqc31wdXvkTI6U2nMA/view?usp=drive_link)         | 3W Hours      | 2.0 M           
 <!-- | [charactr/vocos-encodec-24khz](https://huggingface.co/charactr/vocos-encodec-24khz) | DNS Challenge | 2.5 M               | 7.9 M       -->
 
 ## Training
