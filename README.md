@@ -43,7 +43,7 @@ torchaudio.save(audio_outpath, audio_out, sample_rate=24000, encoding='PCM_S', b
 ```
 
 
-### Part2: Generating Discrete Codecs
+### Part2: Generating discrete codecs
 ```python
 
 from encodec.utils import convert_audio
