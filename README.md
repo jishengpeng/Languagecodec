@@ -11,7 +11,7 @@ To use Language-Codec, install it using:
 ```bash
 conda create -n xxx python=3.8
 conda activate xxx
-pip install -r requirement.txt
+pip install -r requirements.txt
 ```
 
 ## Infer
@@ -86,7 +86,7 @@ Currently, we have only released the results from our paper, and we plan to rele
 | Model Name                                                                          | Dataset       | Training Iterations 
 -------------------------------------------------------------------------------------|---------------|---------------------
 | [languagecodec_paper_8nq](https://drive.google.com/file/d/109ectu4NJWFCpmrqc31wdXvkTI6U2nMA/view?usp=drive_link)         | 3W Hours      | 2.0 M           
-<!-- | [charactr/vocos-encodec-24khz](https://huggingface.co/charactr/vocos-encodec-24khz) | DNS Challenge | 2.5 M               | 7.9 M       -->
+| [languagecodec_chinese_8nq](https://drive.google.com/file/d/18JpINstfF2YrbFg6nqs3BVn0oxdLsuUm/view?usp=drive_link) |     2W Chinese Hours        | 2.0 M      
 
 ## Training
 
