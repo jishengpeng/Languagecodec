@@ -67,7 +67,7 @@ class StreamingTransformerEncoder(nn.Module):
         hidden_scale (int): intermediate dimension of FF module is this times the dimension.
         num_heads (int): number of heads.
         num_layers (int): number of layers.
-        max_period (float): maxium period of cosines in the positional embedding.
+        max_period (float): maximum period of cosines in the positional embedding.
         past_context (int or None): receptive field for the causal mask, infinite if None.
         gelu (bool): if true uses GeLUs, otherwise use ReLUs.
         norm_in (bool): normalize the input.
