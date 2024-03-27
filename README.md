@@ -1,5 +1,7 @@
 # Language-Codec: Reducing the Gaps Between Discrete Codec Representation and Speech Language Models
 
+# Notice: We will release a better language-codec (after engineering adjustment and training) before 4.15, and further polish and revise the paper. 
+
 [Audio samples](https://languagecodec.github.io) |
 Paper [[abs]](https://arxiv.org/abs/2402.12208) [[pdf]](https://arxiv.org/pdf/2402.12208.pdf)
 
