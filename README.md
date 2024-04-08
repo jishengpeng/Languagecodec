@@ -1,7 +1,5 @@
 # Language-Codec: Reducing the Gaps Between Discrete Codec Representation and Speech Language Models
 
-# Notice: We will release a better language-codec (after engineering adjustment and training) before 4.15, and further polish and revise the paper. 
-
 [Audio samples](https://languagecodec.github.io) |
 Paper [[abs]](https://arxiv.org/abs/2402.12208) [[pdf]](https://arxiv.org/pdf/2402.12208.pdf)
 
@@ -84,6 +82,8 @@ audio_out = vocos.decode(features, bandwidth_id=bandwidth_id)
 ## Pre-trained models
 
 Currently, we have only released the results from our paper, and we plan to release additional checkpoints trained on a larger training dataset within the next two months.
+
+Notice: We will release a better language-codec checkpoint before 5.15, and further revise the paper. 
 
 | Model Name                                                                          | Dataset       | Training Iterations 
 -------------------------------------------------------------------------------------|---------------|---------------------
