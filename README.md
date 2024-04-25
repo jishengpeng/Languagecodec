@@ -4,7 +4,7 @@
 
 [![arXiv](https://img.shields.io/badge/arXiv-Paper-<COLOR>.svg)](https://arxiv.org/pdf/2402.12208.pdf)
 [![demo](https://img.shields.io/badge/Languagecodec-Demo-red)](https://languagecodec.github.io)
-[![model](https://img.shields.io/badge/%F0%9F%A4%97%20Languagecodec-Models-blue)](https://languagecodec.github.io)
+[![model](https://img.shields.io/badge/%F0%9F%A4%97%20Languagecodec-Models(New)-blue)](https://drive.google.com/file/d/1ENLyQzbJm2BTignliHHZl11DmQdWZAoX/view?usp=drive_link)
 
 
 # 🔥 News
@@ -93,7 +93,7 @@ audio_out = languagecodec.decode(features, bandwidth_id=bandwidth_id)
 
 | Model Name                                                                          | Dataset       | Training Iterations 
 -------------------------------------------------------------------------------------|---------------|---------------------
-| [languagecodec_paper_8nq](https://drive.google.com/file/d/109ectu4NJWFCpmrqc31wdXvkTI6U2nMA/view?usp=drive_link)         | 5W Hours      | 2.0 M           
+| [languagecodec_paper_8nq](https://drive.google.com/file/d/1ENLyQzbJm2BTignliHHZl11DmQdWZAoX/view?usp=drive_link)         | 5W Hours      | 2.0 M           
 
 ## Training
 
