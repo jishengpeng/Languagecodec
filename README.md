@@ -1,7 +1,18 @@
-# Language-Codec: Reducing the Gaps Between Discrete Codec Representation and Speech Language Models
+# Language-Codec: Reducing the Gaps Between Discrete Codec Representation and Speech Language M      odels
 
 [Audio samples](https://languagecodec.github.io) |
 Paper [[abs]](https://arxiv.org/abs/2402.12208) [[pdf]](https://arxiv.org/pdf/2402.12208.pdf)
+
+[![arXiv](https://img.shields.io/badge/arXiv-Paper-<COLOR>.svg)](https://arxiv.org/pdf/2402.12208.pdf)
+[![demo](https://img.shields.io/badge/Languagecodec-Demo-red)](https://languagecodec.github.io)
+[![model](https://img.shields.io/badge/%F0%9F%A4%97%20Languagecodec-Models-blue)](https://huggingface.co/amphion/naturalspeech3_facodec)
+
+
+# 🔥 News
+- *2024.04*: We update Languagecodec and release a more powerful checkpoint.
+- *2022.02*: We release Languagecodec on arxiv.
+
+![result](result.png)
 
 
 ## Installation
@@ -20,25 +31,25 @@ pip install -r requirements.txt
 
 ```python
 
-from encodec.utils import convert_audio
+from languagecodec_encoder.utils import convert_audio
 import torchaudio
 import torch
-from vocos.pretrained import Vocos
+from languagecodec_decoder.pretrained import Vocos
 
 device=torch.device('cpu')
 
 config_path = "xxx/languagecodec/configs/languagecodec.yaml"
 model_path = "xxx/xxx.ckpt"
 audio_outpath = "xxx"
-vocos = Vocos.from_pretrained0802(config_path, model_path)
-vocos = vocos.to(device)
+languagecodec = Vocos.from_pretrained0802(config_path, model_path)
+languagecodec = languagecodec.to(device)
 
 wav, sr = torchaudio.load(audio_path)
 wav = convert_audio(wav, sr, 24000, 1) 
 bandwidth_id = torch.tensor([0])
 wav=wav.to(device)
-features,discrete_code= vocos.encode(wav, bandwidth_id=bandwidth_id)
-audio_out = vocos.decode(features, bandwidth_id=bandwidth_id) 
+features,discrete_code= languagecodec.encode_infer(wav, bandwidth_id=bandwidth_id)
+audio_out = languagecodec.decode(features, bandwidth_id=bandwidth_id) 
 torchaudio.save(audio_outpath, audio_out, sample_rate=24000, encoding='PCM_S', bits_per_sample=16)
 ```
 
@@ -46,23 +57,23 @@ torchaudio.save(audio_outpath, audio_out, sample_rate=24000, encoding='PCM_S', b
 ### Part2: Generating discrete codecs
 ```python
 
-from encodec.utils import convert_audio
+from languagecodec_encoder.utils import convert_audio
 import torchaudio
 import torch
-from vocos.pretrained import Vocos
+from languagecodec_decoder.pretrained import Vocos
 
 device=torch.device('cpu')
 
 config_path = "xxx/languagecodec/configs/languagecodec.yaml"
 model_path = "xxx/xxx.ckpt"
-vocos = Vocos.from_pretrained0802(config_path, model_path)
-vocos = vocos.to(device)
+languagecodec = Vocos.from_pretrained0802(config_path, model_path)
+languagecodec = languagecodec.to(device)
 
 wav, sr = torchaudio.load(audio_path)
 wav = convert_audio(wav, sr, 24000, 1) 
 bandwidth_id = torch.tensor([0])
 wav=wav.to(device)
-_,discrete_code= vocos.encode(wav, bandwidth_id=bandwidth_id)
+_,discrete_code= languagecodec.encode_infer(wav, bandwidth_id=bandwidth_id)
 print(discrete_code)
 ```
 
@@ -71,9 +82,9 @@ print(discrete_code)
 ### Part3: Audio reconstruction through codecs
 ```python
 # audio_tokens [n_q,1,t]/[n_q,t]
-features = vocos.codes_to_features(audio_tokens)
+features = languagecodec.codes_to_features(audio_tokens)
 bandwidth_id = torch.tensor([0])  
-audio_out = vocos.decode(features, bandwidth_id=bandwidth_id)
+audio_out = languagecodec.decode(features, bandwidth_id=bandwidth_id)
 ```
 
 
@@ -81,14 +92,9 @@ audio_out = vocos.decode(features, bandwidth_id=bandwidth_id)
 
 ## Pre-trained models
 
-Currently, we have only released the results from our paper, and we plan to release additional checkpoints trained on a larger training dataset within the next two months.
-
-Notice: We will release a better language-codec checkpoint before 5.15, and further revise the paper. 
-
 | Model Name                                                                          | Dataset       | Training Iterations 
 -------------------------------------------------------------------------------------|---------------|---------------------
-| [languagecodec_paper_8nq](https://drive.google.com/file/d/109ectu4NJWFCpmrqc31wdXvkTI6U2nMA/view?usp=drive_link)         | 3W Hours      | 2.0 M           
-| [languagecodec_chinese_8nq](https://drive.google.com/file/d/18JpINstfF2YrbFg6nqs3BVn0oxdLsuUm/view?usp=drive_link) |     2W Chinese Hours        | 2.0 M      
+| [languagecodec_paper_8nq](https://drive.google.com/file/d/109ectu4NJWFCpmrqc31wdXvkTI6U2nMA/view?usp=drive_link)         | 5W Hours      | 2.0 M           
 
 ## Training
 
@@ -99,7 +105,7 @@ Notice: We will release a better language-codec checkpoint before 5.15, and furt
 
 ### Step2: Modifying configuration files
 ```python
-# xxx/languagecodec/configs/languagecodec.yaml
+# xxx/languagecodec/configs/languagecodec_mm.yaml
 # Modify the values of parameters such as batch_size, filelist_path, save_dir, device
 ```
 
@@ -109,7 +115,7 @@ training pipeline.
 
 ```bash
 cd xxx/languagecodec
-python train.py fit --config xxx/languagecodec/configs/languagecodec.yaml
+python train.py fit --config xxx/languagecodec/configs/languagecodec_mm.yaml
 ```
 
 
