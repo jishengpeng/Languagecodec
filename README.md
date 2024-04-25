@@ -4,7 +4,7 @@
 
 [![arXiv](https://img.shields.io/badge/arXiv-Paper-<COLOR>.svg)](https://arxiv.org/pdf/2402.12208.pdf)
 [![demo](https://img.shields.io/badge/Languagecodec-Demo-red)](https://languagecodec.github.io)
-[![model](https://img.shields.io/badge/%F0%9F%A4%97%20Languagecodec-Models-blue)](https://huggingface.co/amphion/naturalspeech3_facodec)
+[![model](https://img.shields.io/badge/%F0%9F%A4%97%20Languagecodec-Models-blue)](https://languagecodec.github.io)
 
 
 # 🔥 News
