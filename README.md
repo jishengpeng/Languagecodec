@@ -1,7 +1,6 @@
-# Language-Codec: Reducing the Gaps Between Discrete Codec Representation and Speech Language M      odels
+# Language-Codec: Reducing the Gaps Between Discrete Codec Representation and Speech Language Models
 
-[Audio samples](https://languagecodec.github.io) |
-Paper [[abs]](https://arxiv.org/abs/2402.12208) [[pdf]](https://arxiv.org/pdf/2402.12208.pdf)
+
 
 [![arXiv](https://img.shields.io/badge/arXiv-Paper-<COLOR>.svg)](https://arxiv.org/pdf/2402.12208.pdf)
 [![demo](https://img.shields.io/badge/Languagecodec-Demo-red)](https://languagecodec.github.io)
