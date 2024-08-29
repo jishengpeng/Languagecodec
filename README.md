@@ -8,6 +8,7 @@
 
 
 # 🔥 News
+- *2024.08*：We have open-sourced a SOTA Codec model [WavTokenizer](https://github.com/jishengpeng/WavTokenizer), which can reconstruct speech, music, and audio using only 40 tokens one-second!
 - *2024.04*: We update Languagecodec and release a more powerful checkpoint.
 - *2022.02*: We release Languagecodec on arxiv.
 
